@@ -1,0 +1,25 @@
+<!-- @dsCard group="Type" viewport="700x180" name="Mono — IBM Plex Mono" subtitle="SKUs, order numbers, prices; tabular nums (§6)" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 20px 22px; background: var(--surface-base); }
+  table { border-collapse: collapse; width: 100%; font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+  th { font: var(--text-label); text-transform: uppercase; letter-spacing: var(--tracking-caps); color: var(--text-muted); text-align: left; padding: 0 var(--space-4) var(--space-2) 0; }
+  td { padding: 6px var(--space-4) 6px 0; font-size: var(--scale-sm); color: var(--text-primary); border-top: 1px solid var(--border-subtle); }
+  td.num { text-align: right; }
+</style>
+</head>
+<body>
+  <table>
+    <thead><tr><th>SKU</th><th>Ordrenr.</th><th class="num">Antall</th><th class="num">Pris (NOK)</th></tr></thead>
+    <tbody>
+      <tr><td>VLV-8830-SS</td><td>#NO-104882</td><td class="num">12</td><td class="num">1 248,00</td></tr>
+      <tr><td>VLV-8831-SS</td><td>#NO-104883</td><td class="num">144</td><td class="num">14 976,00</td></tr>
+      <tr><td>FLG-2210-CS</td><td>#NO-104884</td><td class="num">6</td><td class="num">3 540,00</td></tr>
+    </tbody>
+  </table>
+</body>
+</html>

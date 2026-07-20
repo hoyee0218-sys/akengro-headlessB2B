@@ -1,0 +1,40 @@
+<!-- @dsCard group="Colors" viewport="700x180" name="Status" subtitle="Stock, order states, credit — fg on tint" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 18px; background: var(--surface-base); }
+  .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3); }
+  .pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: var(--radius-pill); font: var(--text-label); white-space: nowrap; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .solid { height: 36px; border-radius: var(--radius-sm); margin-top: var(--space-2); }
+  .name { font: var(--text-label); color: var(--text-secondary); margin-top: var(--space-2); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div>
+      <span class="pill" style="background:var(--status-success-bg);color:var(--status-success-fg)"><span class="dot" style="background:var(--status-success)"></span>På lager</span>
+      <div class="solid" style="background:var(--status-success)"></div>
+      <div class="name">success</div>
+    </div>
+    <div>
+      <span class="pill" style="background:var(--status-warning-bg);color:var(--status-warning-fg)"><span class="dot" style="background:var(--status-warning)"></span>Få igjen</span>
+      <div class="solid" style="background:var(--status-warning)"></div>
+      <div class="name">warning</div>
+    </div>
+    <div>
+      <span class="pill" style="background:var(--status-danger-bg);color:var(--status-danger-fg)"><span class="dot" style="background:var(--status-danger)"></span>Utsolgt</span>
+      <div class="solid" style="background:var(--status-danger)"></div>
+      <div class="name">danger</div>
+    </div>
+    <div>
+      <span class="pill" style="background:var(--status-info-bg);color:var(--status-info-fg)"><span class="dot" style="background:var(--status-info)"></span>Bestilt</span>
+      <div class="solid" style="background:var(--status-info)"></div>
+      <div class="name">info</div>
+    </div>
+  </div>
+</body>
+</html>

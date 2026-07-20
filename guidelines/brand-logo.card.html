@@ -1,0 +1,27 @@
+<!-- @dsCard group="Brand" viewport="700x200" name="Logo (placeholder)" subtitle="Typographic wordmark — merchants replace with real assets" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--surface-base); }
+  .row { display: flex; align-items: center; gap: var(--space-8); flex-wrap: wrap; }
+  .lockup { display: inline-flex; align-items: center; gap: 10px; }
+  .mark { width: 30px; height: 30px; border-radius: var(--radius-xs); background: var(--brand-primary); color: var(--brand-on-primary); display: grid; place-items: center; font: var(--weight-black) 17px/1 var(--font-display); }
+  .word { font: var(--weight-bold) var(--scale-xl)/1 var(--font-display); letter-spacing: var(--tracking-tight); color: var(--text-primary); }
+  .word span { color: var(--text-muted); font-weight: var(--weight-medium); }
+  .onink { background: var(--brand-primary); padding: 16px 20px; border-radius: var(--radius-card); }
+  .onink .word { color: #fff; } .onink .mark { background: #fff; color: var(--brand-primary); }
+  .note { font: var(--scale-xs)/1.5 var(--font-body); color: var(--text-muted); margin-top: 18px; max-width: 64ch; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <span class="lockup"><span class="mark">N</span><span class="word">Nordvik<span>·industri</span></span></span>
+    <span class="lockup onink"><span class="mark">N</span><span class="word">Nordvik<span style="color:rgba(255,255,255,0.6)">·industri</span></span></span>
+    <span class="mark" style="width:44px;height:44px;font-size:24px">N</span>
+  </div>
+  <p class="note">Placeholder typographic lockup. The template ships no merchant logo by design — a fork drops a real logo into <code>assets/</code> and points <code>merchant.config.logo.src</code> at it. Keep clear space ≥ the mark's height on all sides.</p>
+</body>
+</html>

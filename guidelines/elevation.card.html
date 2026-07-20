@@ -1,0 +1,25 @@
+<!-- @dsCard group="Spacing" viewport="700x170" name="Elevation" subtitle="Subtle cool-tinted shadows + focus ring" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 26px 22px; background: var(--surface-sunken); }
+  .row { display: flex; gap: var(--space-6); align-items: center; }
+  .cell { text-align: center; }
+  .box { width: 96px; height: 60px; background: var(--surface-base); border-radius: var(--radius-md); }
+  .lab { font-family: var(--font-mono); font-size: var(--scale-2xs); color: var(--text-muted); margin-top: 12px; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="cell"><div class="box" style="box-shadow:var(--shadow-xs)"></div><div class="lab">xs</div></div>
+    <div class="cell"><div class="box" style="box-shadow:var(--shadow-sm)"></div><div class="lab">sm</div></div>
+    <div class="cell"><div class="box" style="box-shadow:var(--shadow-md)"></div><div class="lab">md</div></div>
+    <div class="cell"><div class="box" style="box-shadow:var(--shadow-lg)"></div><div class="lab">lg</div></div>
+    <div class="cell"><div class="box" style="box-shadow:var(--shadow-xl)"></div><div class="lab">xl</div></div>
+    <div class="cell"><div class="box" style="box-shadow:var(--ring);border:1px solid var(--border-subtle)"></div><div class="lab">focus ring</div></div>
+  </div>
+</body>
+</html>

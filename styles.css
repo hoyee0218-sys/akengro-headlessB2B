@@ -1,0 +1,19 @@
+/* ===========================================================================
+   HEADLESS B2B STOREFRONT — DESIGN SYSTEM
+   Global stylesheet entry point. Consumers link THIS one file.
+   Keep this file as an @import list only — no rules here.
+
+   In a generated merchant repo this maps to app/styles/tokens.css; a merchant
+   theme overrides --brand-* and --font-* in tokens/colors.css + typography.css
+   (or a thin override layer) and leaves the rest of the system intact.
+   ======================================================================== */
+
+@import url('tokens/fonts.css');
+@import url('tokens/colors.css');
+@import url('tokens/typography.css');
+@import url('tokens/spacing.css');
+@import url('tokens/radius.css');
+@import url('tokens/shadow.css');
+@import url('tokens/motion.css');
+@import url('tokens/base.css');
+@import url('tokens/spark-mapping.css');

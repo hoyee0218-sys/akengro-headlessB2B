@@ -1,0 +1,60 @@
+/* ===========================================================================
+   TYPOGRAPHY
+   ---------------------------------------------------------------------------
+   Placeholder pairing (utilitarian-precise, neutral B2B):
+     display  Archivo        — grotesque; tight, technical headings & labels
+     body     IBM Plex Sans  — refined, highly readable UI/body face
+     mono     IBM Plex Mono  — SKUs, order numbers, prices in tables (§6)
+
+   A merchant theme overrides --font-display / --font-body / --font-mono.
+   The scale, weights, line-heights and tracking are shared infrastructure.
+   ======================================================================== */
+
+:root {
+  /* --- Families (MERCHANT-CONFIGURABLE) ------------------------------- */
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --font-body:    'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono:    'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* --- Type scale (px) ----------------------------------------------- */
+  --scale-2xs:  0.6875rem;  /* 11 */
+  --scale-xs:   0.75rem;    /* 12 */
+  --scale-sm:   0.8125rem;  /* 13 */
+  --scale-base: 0.9375rem;  /* 15 — base UI/body */
+  --scale-md:   1.0625rem;  /* 17 */
+  --scale-lg:   1.25rem;    /* 20 */
+  --scale-xl:   1.5625rem;  /* 25 */
+  --scale-2xl:  1.9375rem;  /* 31 */
+  --scale-3xl:  2.4375rem;  /* 39 */
+  --scale-4xl:  3.0625rem;  /* 49 */
+  --scale-5xl:  3.8125rem;  /* 61 */
+
+  /* --- Weights -------------------------------------------------------- */
+  --weight-regular:  400;
+  --weight-text:     450;  /* Plex Sans optical body weight */
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-black:    800;  /* Archivo display impact */
+
+  /* --- Line heights --------------------------------------------------- */
+  --leading-tight:   1.1;
+  --leading-snug:    1.25;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+
+  /* --- Letter spacing ------------------------------------------------- */
+  --tracking-tight:  -0.02em;   /* display headings */
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-caps:   0.08em;    /* uppercase eyebrows / labels */
+
+  /* --- Semantic roles ------------------------------------------------- */
+  --text-display:  var(--weight-black) var(--scale-4xl)/var(--leading-tight) var(--font-display);
+  --text-h1:       var(--weight-bold)  var(--scale-3xl)/var(--leading-tight) var(--font-display);
+  --text-h2:       var(--weight-bold)  var(--scale-2xl)/var(--leading-snug)  var(--font-display);
+  --text-h3:       var(--weight-semibold) var(--scale-xl)/var(--leading-snug) var(--font-display);
+  --text-body:     var(--weight-text)  var(--scale-base)/var(--leading-normal) var(--font-body);
+  --text-small:    var(--weight-regular) var(--scale-sm)/var(--leading-normal) var(--font-body);
+  --text-label:    var(--weight-semibold) var(--scale-xs)/var(--leading-snug) var(--font-body);
+}

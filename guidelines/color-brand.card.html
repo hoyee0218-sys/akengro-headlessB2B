@@ -1,0 +1,25 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Brand (placeholder)" subtitle="Monochrome by default — merchant overrides --brand-*" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 18px; background: var(--surface-base); }
+  .row { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  .sw { width: 116px; }
+  .chip { height: 56px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); }
+  .name { font: var(--text-label); color: var(--text-primary); margin-top: var(--space-2); }
+  .val { font-family: var(--font-mono); font-size: var(--scale-2xs); color: var(--text-muted); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:var(--brand-primary)"></div><div class="name">primary</div><div class="val">#1C2024</div></div>
+    <div class="sw"><div class="chip" style="background:var(--brand-primary-hover)"></div><div class="name">primary-hover</div><div class="val">#0E0F11</div></div>
+    <div class="sw"><div class="chip" style="background:var(--brand-secondary)"></div><div class="name">secondary</div><div class="val">#4A525B</div></div>
+    <div class="sw"><div class="chip" style="background:var(--brand-accent)"></div><div class="name">accent</div><div class="val">#2D5BD6</div></div>
+    <div class="sw"><div class="chip" style="background:var(--brand-on-primary)"></div><div class="name">on-primary</div><div class="val">#FFFFFF</div></div>
+  </div>
+</body>
+</html>

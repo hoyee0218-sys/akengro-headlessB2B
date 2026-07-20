@@ -1,0 +1,31 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Neutral ramp" subtitle="Cool-gray scale — shared infrastructure" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 18px; background: var(--surface-base); }
+  .ramp { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--space-1); }
+  .cell { display: flex; flex-direction: column; }
+  .chip { height: 64px; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); }
+  .lab { font-family: var(--font-mono); font-size: 9px; color: var(--text-muted); margin-top: 6px; text-align: center; }
+</style>
+</head>
+<body>
+  <div class="ramp">
+    <div class="cell"><div class="chip" style="background:var(--gray-0)"></div><div class="lab">0</div></div>
+    <div class="cell"><div class="chip" style="background:var(--gray-25)"></div><div class="lab">25</div></div>
+    <div class="cell"><div class="chip" style="background:var(--gray-50)"></div><div class="lab">50</div></div>
+    <div class="cell"><div class="chip" style="background:var(--gray-100)"></div><div class="lab">100</div></div>
+    <div class="cell"><div class="chip" style="background:var(--gray-200)"></div><div class="lab">200</div></div>
+    <div class="cell"><div class="chip" style="background:var(--gray-300)"></div><div class="lab">300</div></div>
+    <div class="cell"><div class="chip" style="background:var(--gray-400)"></div><div class="lab">400</div></div>
+    <div class="cell"><div class="chip" style="background:var(--gray-500)"></div><div class="lab">500</div></div>
+    <div class="cell"><div class="chip" style="background:var(--gray-600)"></div><div class="lab">600</div></div>
+    <div class="cell"><div class="chip" style="background:var(--gray-700)"></div><div class="lab">700</div></div>
+    <div class="cell"><div class="chip" style="background:var(--gray-800)"></div><div class="lab">800</div></div>
+    <div class="cell"><div class="chip" style="background:var(--gray-900)"></div><div class="lab">900</div></div>
+  </div>
+</body>
+</html>

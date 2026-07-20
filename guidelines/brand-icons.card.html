@@ -1,0 +1,24 @@
+<!-- @dsCard group="Brand" viewport="700x180" name="Iconography — Lucide" subtitle="Outline, 1.75px stroke, 24px grid (CDN substitute)" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<style>
+  body { margin: 0; padding: 22px; background: var(--surface-base); }
+  .grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: var(--space-4) var(--space-2); }
+  .cell { display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--text-primary); }
+  .cell i { width: 22px; height: 22px; }
+  .lab { font: 9px/1 var(--font-mono); color: var(--text-muted); }
+</style>
+</head>
+<body>
+  <div class="grid" id="g"></div>
+  <script>
+    const icons = ['search','user','shopping-cart','package','file-text','tag','wallet','truck','rotate-cw','download','sliders-horizontal','chevron-right','arrow-right','plus','minus','check','triangle-alert','store','layout-dashboard','log-out'];
+    document.getElementById('g').innerHTML = icons.map(n => `<div class="cell"><i data-lucide="${n}"></i><span class="lab">${n}</span></div>`).join('');
+    lucide.createIcons({ attrs: { 'stroke-width': 1.75 } });
+  </script>
+</body>
+</html>

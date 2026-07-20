@@ -1,0 +1,23 @@
+<!-- @dsCard group="Type" viewport="700x230" name="Body — IBM Plex Sans" subtitle="UI & running text; weights 400–600" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 20px 22px; background: var(--surface-base); }
+  .stack { display: flex; flex-direction: column; gap: var(--space-3); max-width: 560px; }
+  .row { display: flex; align-items: baseline; gap: var(--space-4); }
+  .meta { font-family: var(--font-mono); font-size: var(--scale-2xs); color: var(--text-muted); margin-left: auto; white-space: nowrap; }
+  .eyebrow { font: var(--text-label); text-transform: uppercase; letter-spacing: var(--tracking-caps); color: var(--text-muted); }
+  p { font: var(--text-body); color: var(--text-secondary); }
+</style>
+</head>
+<body>
+  <div class="stack">
+    <div class="row"><span class="eyebrow">Katalog · eyebrow</span><span class="meta">xs · 600 · caps</span></div>
+    <div class="row"><span style="font:var(--weight-semibold) var(--scale-md)/1.3 var(--font-body);color:var(--text-primary)">Lead / emphasized UI text</span><span class="meta">md · 600</span></div>
+    <p>Body copy in IBM Plex Sans at 15px. Reads cleanly in dense B2B tables and account views, with a calm, technical tone. <span class="meta" style="margin:0">base · 450</span></p>
+  </div>
+</body>
+</html>

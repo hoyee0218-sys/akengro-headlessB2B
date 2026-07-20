@@ -1,0 +1,34 @@
+/* ===========================================================================
+   SPARKLAYER THEMING MAP (§1)
+   ---------------------------------------------------------------------------
+   Where SparkLayer web components are used (B2B cart, quote widgets, pricing
+   tables we don't re-render ourselves), Spark reads its own CSS custom
+   properties. This is the SINGLE place we map our merchant tokens onto Spark's
+   vars so their components inherit the merchant theme. Derived from the tokens
+   above — do NOT hand-tune Spark vars per component.
+
+   Reference var names follow Spark's --b2b-* convention; confirm exact names
+   against the SparkLayer version in use and extend this map as needed.
+   ======================================================================== */
+
+:root {
+  --b2b-brand-color:        var(--brand-primary);
+  --b2b-brand-color-hover:  var(--brand-primary-hover);
+  --b2b-brand-color-text:   var(--brand-on-primary);
+  --b2b-accent-color:       var(--brand-accent);
+
+  --b2b-brand-font:         var(--font-body);
+  --b2b-heading-font:       var(--font-display);
+  --b2b-mono-font:          var(--font-mono);
+
+  --b2b-text-color:         var(--text-primary);
+  --b2b-text-color-muted:   var(--text-muted);
+  --b2b-surface-color:      var(--surface-base);
+  --b2b-surface-color-alt:  var(--surface-sunken);
+  --b2b-border-color:       var(--border-subtle);
+
+  --b2b-radius:             var(--radius-control);
+  --b2b-success-color:      var(--status-success);
+  --b2b-warning-color:      var(--status-warning);
+  --b2b-error-color:        var(--status-danger);
+}

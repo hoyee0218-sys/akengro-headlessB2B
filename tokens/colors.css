@@ -1,0 +1,76 @@
+/* ===========================================================================
+   COLORS — template placeholder palette
+   ---------------------------------------------------------------------------
+   The un-themed template is deliberately MONOCHROME: ink + a cool-neutral gray
+   ramp + functional status colors. A merchant theme injects its brand color by
+   overriding the --brand-* tokens only; the neutral ramp and status colors are
+   shared infrastructure and rarely change.
+
+   Why monochrome by default: an un-themed fork should look intentionally blank,
+   not accidentally branded. Buttons are ink-black until a merchant adds color.
+   ======================================================================== */
+
+:root {
+  /* --- Neutral ramp (cool gray) — base values ------------------------- */
+  --gray-0:   #ffffff;
+  --gray-25:  #fafbfc;
+  --gray-50:  #f4f6f8;
+  --gray-100: #eceff2;
+  --gray-200: #dde2e7;
+  --gray-300: #c5ccd3;
+  --gray-400: #9aa3ad;
+  --gray-500: #6b747e;
+  --gray-600: #4a525b;
+  --gray-700: #333a41;
+  --gray-800: #23282d;
+  --gray-900: #16181b;
+  --ink:      #0e0f11;
+
+  /* --- Brand (MERCHANT-CONFIGURABLE) ---------------------------------- */
+  /* Placeholder = ink. A merchant overrides these four + on-primary. */
+  --brand-primary:        #1c2024;
+  --brand-primary-hover:  #0e0f11;
+  --brand-secondary:      #4a525b;
+  --brand-accent:         #2d5bd6;   /* single restrained spot color      */
+  --brand-on-primary:     #ffffff;   /* text/icon on primary surfaces     */
+
+  /* --- Surfaces ------------------------------------------------------- */
+  --surface-base:   #ffffff;
+  --surface-raised: #ffffff;   /* paired with --shadow-* for elevation    */
+  --surface-sunken: #f4f6f8;
+  --surface-inset:  #eceff2;
+
+  /* --- Borders -------------------------------------------------------- */
+  --border-subtle: #e4e8ec;
+  --border-strong: #c5ccd3;
+  --border-focus:  var(--brand-accent);
+
+  /* --- Text ----------------------------------------------------------- */
+  --text-primary:   #16181b;
+  --text-secondary: #4a525b;
+  --text-muted:     #8a929b;
+  --text-on-accent: #ffffff;
+  --text-link:      var(--brand-accent);
+
+  /* --- Status (B2B: stock, order states, credit) --------------------- */
+  --status-success:     #1e8a4c;
+  --status-success-bg:  #e7f4ec;
+  --status-success-fg:  #146236;
+
+  --status-warning:     #b5710e;
+  --status-warning-bg:  #fbf0db;
+  --status-warning-fg:  #855108;
+
+  --status-danger:      #c8392b;
+  --status-danger-bg:   #fbe9e7;
+  --status-danger-fg:   #97271c;
+
+  --status-info:        #2d5bd6;
+  --status-info-bg:     #e8eefb;
+  --status-info-fg:     #1f43a3;
+
+  /* --- Demo-mode marker (Integration Seams §7) ----------------------- */
+  --demo-fg: #7a4e00;
+  --demo-bg: #fff3d6;
+  --demo-border: #e8c878;
+}

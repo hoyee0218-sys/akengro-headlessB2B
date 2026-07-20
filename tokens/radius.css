@@ -1,0 +1,19 @@
+/* ===========================================================================
+   RADIUS — small & precise (utilitarian-precise direction)
+   The template leans on hairline borders, not heavy rounding.
+   ======================================================================== */
+
+:root {
+  --radius-none: 0;
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   10px;
+  --radius-xl:   14px;
+  --radius-pill: 999px;
+
+  /* Semantic */
+  --radius-control: var(--radius-sm);   /* buttons, inputs, selects */
+  --radius-card:    var(--radius-md);
+  --radius-overlay: var(--radius-lg);   /* dialogs, popovers        */
+}

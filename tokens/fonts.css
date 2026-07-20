@@ -1,0 +1,16 @@
+/* ===========================================================================
+   FONTS — template placeholder typefaces
+   ---------------------------------------------------------------------------
+   These are NEUTRAL, utilitarian defaults for an un-themed fork. They are
+   loaded from Google Fonts for convenience in the design-system preview.
+
+   PRODUCTION NOTE: self-host these (or the merchant's chosen faces) as woff2
+   and replace this @import with local @font-face rules to stay within the
+   Oxygen worker budget and avoid a third-party render-blocking request.
+
+   MERCHANT OVERRIDE: a merchant theme swaps --font-display / --font-body /
+   --font-mono in tokens/typography.css; it does NOT edit this file unless it
+   ships its own font binaries.
+   ======================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;450;500;600;700&display=swap');

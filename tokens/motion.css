@@ -1,0 +1,28 @@
+/* ===========================================================================
+   MOTION — fast, precise, no bounce (utilitarian direction)
+   ======================================================================== */
+
+:root {
+  --motion-fast: 120ms; /* @kind other */
+  --motion-base: 200ms; /* @kind other */
+  --motion-slow: 320ms; /* @kind other */
+
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* @kind other */
+  --ease-out:      cubic-bezier(0, 0, 0.2, 1); /* @kind other */
+  --ease-in:       cubic-bezier(0.4, 0, 1, 1); /* @kind other */
+  --ease-in-out:   cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+
+  /* Common composed transitions */
+  --transition-control: background-color var(--motion-fast) var(--ease-standard),
+                         border-color var(--motion-fast) var(--ease-standard),
+                         color var(--motion-fast) var(--ease-standard),
+                         box-shadow var(--motion-fast) var(--ease-standard);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms; /* @kind other */
+    --motion-base: 0ms; /* @kind other */
+    --motion-slow: 0ms; /* @kind other */
+  }
+}

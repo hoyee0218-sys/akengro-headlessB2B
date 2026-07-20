@@ -1,0 +1,54 @@
+<!-- @dsCard group="Components" viewport="700x300" name="Data display" subtitle="Badge, Tag, Card, Tabs" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; padding: 22px; background: var(--surface-sunken); font-family: var(--font-body); }
+  .grid { display: flex; flex-direction: column; gap: var(--space-4); }
+  .row { display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+  const { Badge, Tag, Card, Tabs, Button } = window.HeadlessB2BStorefrontDesignSystem_4ebfb1;
+  function Demo() {
+    const [tab, setTab] = React.useState('apen');
+    const [filters, setFilters] = React.useState({ stål: true, messing: false });
+    return (
+      <div className="grid">
+        <div className="row">
+          <Badge tone="success" dot>På lager</Badge>
+          <Badge tone="warning" dot>Få igjen</Badge>
+          <Badge tone="danger" dot>Utsolgt</Badge>
+          <Badge tone="info">Bestilt</Badge>
+          <Badge tone="outline">Netto 30</Badge>
+          <Badge tone="solid">Tilbud</Badge>
+        </div>
+        <div className="row">
+          <Tag selected={filters.stål} onClick={() => setFilters(f => ({...f, stål: !f.stål}))}>Rustfritt stål</Tag>
+          <Tag selected={filters.messing} onClick={() => setFilters(f => ({...f, messing: !f.messing}))}>Messing</Tag>
+          <Tag onRemove={() => {}}>På lager</Tag>
+        </div>
+        <Tabs value={tab} onChange={setTab} tabs={[
+          {value:'alle', label:'Alle', count:128},
+          {value:'apen', label:'Åpne', count:4},
+          {value:'levert', label:'Levert'},
+        ]} />
+        <Card title="Siste ordre" headerAction={<Button variant="ghost" size="sm">Se alle</Button>} elevation="raised" style={{maxWidth:360}}>
+          <div style={{font:'var(--text-body)', color:'var(--text-secondary)'}}>Ordre #NO-104882 · 3 varelinjer</div>
+          <div className="row" style={{marginTop:8}}><Badge tone="info" dot>På vei</Badge></div>
+        </Card>
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script>
+</body>
+</html>

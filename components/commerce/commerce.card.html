@@ -1,0 +1,75 @@
+<!-- @dsCard group="Components" viewport="700x460" name="B2B commerce" subtitle="PriceDisplay, StockIndicator, QuantityStepper, QtyBreakTable, OrderStatusBadge, DemoDataBadge, ProductCard" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; padding: 22px; background: var(--surface-sunken); font-family: var(--font-body); }
+  .wrap { display: grid; grid-template-columns: 280px 1fr; gap: var(--space-6); align-items: start; }
+  .panel { display: flex; flex-direction: column; gap: var(--space-5); }
+  .group { display: flex; flex-direction: column; gap: var(--space-3); }
+  .lbl { font: var(--text-label); text-transform: uppercase; letter-spacing: var(--tracking-caps); color: var(--text-muted); }
+  .row { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+  .breakbox { background: var(--surface-base); border: 1px solid var(--border-subtle); border-radius: var(--radius-card); padding: var(--space-3) var(--space-4); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+  const NS = window.HeadlessB2BStorefrontDesignSystem_4ebfb1;
+  const { PriceDisplay, StockIndicator, QuantityStepper, QtyBreakTable, OrderStatusBadge, DemoDataBadge, ProductCard } = NS;
+  function Demo() {
+    const [qty, setQty] = React.useState(12);
+    return (
+      <div className="wrap">
+        <ProductCard title="Kuleventil DN25 rustfritt stål" sku="VLV-8830-SS"
+          amount={1248} listAmount={1390} stockStatus="in" leadTime="sendes i dag" />
+        <div className="panel">
+          <div className="group"><span className="lbl">Price</span>
+            <div className="row">
+              <PriceDisplay amount={1248} vatMode="ex" size="lg" />
+              <PriceDisplay amount={1064} listAmount={1248} vatMode="ex" />
+              <PriceDisplay gated />
+            </div>
+          </div>
+          <div className="group"><span className="lbl">Stock</span>
+            <div className="row">
+              <StockIndicator status="in" leadTime="sendes i dag" />
+              <StockIndicator status="low" qty={6} />
+              <StockIndicator status="backorder" leadTime="3–5 virkedager" />
+              <StockIndicator status="out" />
+            </div>
+          </div>
+          <div className="group"><span className="lbl">Quantity & breaks</span>
+            <div className="row">
+              <QuantityStepper value={qty} step={12} unit="stk" onChange={setQty} />
+              <div className="breakbox" style={{minWidth:220}}>
+                <QtyBreakTable currentQty={qty} breaks={[{minQty:1,price:104},{minQty:12,price:98},{minQty:144,price:89}]} />
+              </div>
+            </div>
+          </div>
+          <div className="group"><span className="lbl">Order status</span>
+            <div className="row">
+              <OrderStatusBadge status="quote" />
+              <OrderStatusBadge status="confirmed" />
+              <OrderStatusBadge status="shipped" />
+              <OrderStatusBadge status="delivered" />
+              <OrderStatusBadge status="overdue" />
+            </div>
+          </div>
+          <div className="group"><span className="lbl">Demo marker</span>
+            <div className="row"><DemoDataBadge /><DemoDataBadge label="Mock pris fra seam" /></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script>
+</body>
+</html>
