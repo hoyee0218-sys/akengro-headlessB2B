@@ -1,10 +1,16 @@
-import {defineConfig} from 'vite';
+﻿import {defineConfig} from 'vite';
 import {hydrogen} from '@shopify/hydrogen/vite';
 import {oxygen} from '@shopify/mini-oxygen/vite';
 import {reactRouter} from '@react-router/dev/vite';
 
-export default defineConfig({
-  plugins: [hydrogen(), oxygen(), reactRouter()],
+export default defineConfig(({command}) => ({
+  plugins: [
+    hydrogen(),
+    // Oxygen is for local `shopify hydrogen dev` only. Vercel/production builds
+    // use vercelPreset + react-router build and must not include this plugin.
+    command === 'serve' ? oxygen() : null,
+    reactRouter(),
+  ].filter(Boolean),
   resolve: {
     tsconfigPaths: true,
   },
@@ -35,4 +41,4 @@ export default defineConfig({
   server: {
     allowedHosts: ['.tryhydrogen.dev', '.ngrok-free.app'],
   },
-});
+}));

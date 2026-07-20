@@ -5,9 +5,9 @@
   "version": "2026.4.2",
   "type": "module",
   "scripts": {
-    "build": "shopify hydrogen build --codegen",
+    "build": "shopify hydrogen codegen && react-router build",
     "dev": "shopify hydrogen dev --codegen --host",
-    "preview": "shopify hydrogen preview --build",
+    "preview": "npm run build && npx --yes @react-router/serve ./dist/server/nodejs_eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
     "lint": "eslint --no-error-on-unmatched-pattern .",
     "typecheck": "react-router typegen && tsc --noEmit",
     "test": "vitest run",
