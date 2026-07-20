@@ -31,6 +31,8 @@ import {organizationJsonLd} from '~/lib/seo';
 import {t} from '~/lib/copy';
 import {merchantConfig} from '~/merchant.config';
 
+export const config = { runtime: 'edge' };
+
 export type RootLoader = typeof loader;
 
 /**
