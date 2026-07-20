@@ -1,6 +1,14 @@
-import {createHydrogenContext} from '@shopify/hydrogen';
+import {createHydrogenContext, InMemoryCache} from '@shopify/hydrogen';
 import {AppSession} from '~/lib/session';
 import {CART_QUERY_FRAGMENT} from '~/lib/fragments';
+
+async function openCache(): Promise<Cache> {
+  // Oxygen / Workers expose the Cache API; Node (Vercel) does not.
+  if (typeof caches !== 'undefined' && typeof caches.open === 'function') {
+    return caches.open('hydrogen');
+  }
+  return new InMemoryCache();
+}
 
 // Define the additional context object
 const additionalContext = {
@@ -51,7 +59,7 @@ export async function createHydrogenRouterContext(
 
   const waitUntil = executionContext.waitUntil.bind(executionContext);
   const [cache, session] = await Promise.all([
-    caches.open('hydrogen'),
+    openCache(),
     AppSession.init(request, [env.SESSION_SECRET]),
   ]);
 

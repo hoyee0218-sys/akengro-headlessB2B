@@ -3,7 +3,7 @@ import {hydrogen} from '@shopify/hydrogen/vite';
 import {oxygen} from '@shopify/mini-oxygen/vite';
 import {reactRouter} from '@react-router/dev/vite';
 
-export default defineConfig(({command}) => ({
+export default defineConfig(({command, isSsrBuild}) => ({
   plugins: [
     hydrogen(),
     // Oxygen is for local `shopify hydrogen dev` only. Vercel/production builds
@@ -18,6 +18,13 @@ export default defineConfig(({command}) => ({
     // Allow a strict Content-Security-Policy
     // without inlining assets as base64:
     assetsInlineLimit: 0,
+    // Custom Vercel server entry so we can inject Hydrogen getLoadContext.
+    // @see https://vercel.com/docs/frameworks/frontend/react-router#using-a-custom-server-entrypoint
+    rollupOptions: isSsrBuild
+      ? {
+          input: './server/app.ts',
+        }
+      : undefined,
   },
   ssr: {
     optimizeDeps: {
